@@ -1,0 +1,36 @@
+name: abnf-gen
+version: '0.1.0.0'
+category: Web
+author: Author name here
+maintainer: example@example.com
+copyright: 2019 Author name here
+license: BSD3
+github: githubuser/abnf-gen
+extra-source-files:
+- README.md
+dependencies:
+- base >=4.7 && <5
+- abnf
+- hedgehog
+- text
+
+library:
+  source-dirs: src
+  exposed-modules:
+  - Lib
+tests:
+  tests:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - abnf-gen
+    - hspec
+    - megaparsec
+    - hw-hspec-hedgehog
+ghc-options:
+  -fwarn-incomplete-patterns
+  -Wall
